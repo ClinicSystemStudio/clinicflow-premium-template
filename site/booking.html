@@ -8,7 +8,7 @@
 
 <script src="./config/config.js"></script>
 
-<link rel="icon" type="image/png" href="/faviconv4.png">
+<link rel="icon" type="image/png" href="./assets/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -383,9 +383,9 @@ function confirmSelectedSlot() {
 async function bookSlot(date, time) {
   const status = document.getElementById("booking-status");
 
-  const name = localStorage.getItem("template_customer_name") || "Client";
-  const email = localStorage.getItem("template_customer_email") || "";
-  const phone = localStorage.getItem("template_customer_phone") || "";
+  const name = localStorage.getItem("clinic_customer_name") || "Client";
+  const email = localStorage.getItem("clinic_customer_email") || "";
+  const phone = localStorage.getItem("clinic_customer_phone") || "";
 
   status.textContent = "Booking your appointment...";
   status.className = "";
