@@ -468,7 +468,7 @@ if (qrCode) {
   qrBox.style.display = "block";
 }
 
-document.getElementById("openBookingBtn").href = `${businessDomain}/booking.html?session_id=test`;
+document.getElementById("openBookingBtn").href = `${businessDomain}/deposit.html`;
 
 function escapeHtml(value){
   return String(value || "")
@@ -679,7 +679,7 @@ async function loadBookings(){
   body.innerHTML = "";
 
   try{
-    const res = await fetch(`${CONFIG.apiBase}/api?admin=bookings`)
+    const res = await fetch(`${API_BASE}/api?admin=bookings`);
 
     if (!res.ok) {
       throw new Error("Could not load bookings");
@@ -688,10 +688,15 @@ async function loadBookings(){
     const bookings = await res.json();
 
     if(!bookings.length){
-      message.textContent = "No bookings found.";
-      summary.textContent = "0 bookings";
-      return;
-    }
+  message.innerHTML = `
+    <strong style="display:block;color:var(--brand);font-size:18px;margin-bottom:6px;">
+      Your booking system is ready.
+    </strong>
+    No bookings have been received yet. Once clients book, their details will appear here.
+  `;
+  summary.textContent = "0 bookings • ready to launch";
+  return;
+}
 
     const activeCount = bookings.filter(booking => booking.status !== "cancelled").length;
     const cancelledCount = bookings.filter(booking => booking.status === "cancelled").length;
