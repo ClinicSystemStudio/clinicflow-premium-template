@@ -32,7 +32,7 @@ window.CONFIG = {
   payment: {
     depositAmount: 30,
     currencySymbol: "£",
-    depositPaymentLink: "PASTE_YOUR_STRIPE_PAYMENT_LINK_HERE",
+    depositPaymentLink: "https://buy.stripe.com/your-real-link"
     bookingPage: "/booking.html"
   },
 
