@@ -9,8 +9,8 @@ window.CONFIG = {
   },
 
   branding: {
-    logo: "/assets/logo.png",
-    favicon: "/assets/favicon.png",
+    logo: "./assets/logo.png",
+    favicon: "./assets/favicon.png",
     primaryColor: "#1e3a5f",
     primaryDark: "#162c47",
     backgroundColor: "#f4f7fb",
