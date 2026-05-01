@@ -519,7 +519,7 @@ function saveCustomerDetails() {
 }
 
 function isPlaceholderPaymentLink(link) {
-  return !link || link === "#" || link.includes("your-stripe-payment-link");
+  return !link || link === "#" || link.includes("PASTE_YOUR_STRIPE_PAYMENT_LINK_HERE");
 }
 
 payBtn.href = paymentLink;
