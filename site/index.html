@@ -1,43 +1,305 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Business Template</title>
-  <script src="./config/config.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Clinic Booking System</title>
+<script src="./config/config.js"></script>
+
+<link rel="icon" type="image/png" href="./assets/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f4f7fb;
+  --brand:#1e3a5f;
+  --brand-dark:#162c47;
+  --text:#1a1a1a;
+  --soft:#e6f0ff;
+  --muted:#6b7a90;
+  --card:#ffffff;
+  --line:rgba(30,58,95,.14);
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Montserrat',Arial,sans-serif;
+  background:linear-gradient(180deg,#ffffff 0%,var(--bg) 100%);
+  color:var(--text);
+}
+
+.wrap{
+  width:min(1080px,calc(100% - 36px));
+  margin:auto;
+}
+
+.nav{
+  padding:18px 0;
+  border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(8px);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.nav-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+}
+
+.logo-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo-row img{
+  width:52px;
+  height:52px;
+  object-fit:contain;
+  display:none;
+}
+
+.brand-name{
+  font-size:18px;
+  font-weight:700;
+  color:var(--brand);
+}
+
+.brand-tagline{
+  font-size:13px;
+  color:var(--muted);
+}
+
+.nav a{
+  color:var(--brand);
+  text-decoration:none;
+  font-weight:700;
+  font-size:13px;
+}
+
+.hero{
+  padding:72px 0 46px;
+  text-align:center;
+}
+
+.kicker{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:999px;
+  background:var(--soft);
+  color:var(--brand);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+h1{
+  font-size:clamp(34px,6vw,64px);
+  line-height:1.05;
+  margin:20px auto 16px;
+  max-width:820px;
+}
+
+.hero p{
+  max-width:680px;
+  margin:0 auto;
+  color:var(--muted);
+  line-height:1.7;
+  font-size:16px;
+}
+
+.cta-row{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+  padding:14px 22px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.btn-primary{
+  background:var(--brand);
+  color:white;
+}
+
+.btn-secondary{
+  background:var(--soft);
+  color:var(--brand);
+  border:1px solid var(--line);
+}
+
+section{
+  padding:42px 0;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  background:rgba(255,255,255,.9);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:24px;
+  box-shadow:0 14px 40px rgba(30,58,95,.08);
+}
+
+.card h3{
+  margin:0 0 10px;
+  color:var(--brand);
+}
+
+.card p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.65;
+  font-size:14px;
+}
+
+.booking-panel{
+  text-align:center;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:34px 24px;
+  box-shadow:0 18px 60px rgba(30,58,95,.10);
+}
+
+.footer{
+  padding:26px 0;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+}
+
+@media(max-width:800px){
+  .nav-inner{flex-direction:column;text-align:center}
+  .grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 
 <body>
-  <img id="logo" alt="Business logo" style="max-width:160px;">
-  <h1 id="businessName"></h1>
-  <p id="tagline"></p>
 
-  <script>
-    const CONFIG = window.CONFIG;
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="logo-row">
+      <img id="businessLogo" alt="Business logo">
+      <div>
+        <div class="brand-name" id="businessName">Your Clinic Name</div>
+        <div class="brand-tagline" id="businessTagline">Aesthetic & Beauty Specialist</div>
+      </div>
+    </div>
 
-    document.getElementById("logo").src = CONFIG.branding.logo;
-    document.getElementById("businessName").textContent = CONFIG.business.name;
-    document.getElementById("tagline").textContent = CONFIG.business.tagline;
+    <a href="deposit.html">Book Now</a>
+  </div>
+</header>
 
-    document.documentElement.style.setProperty("--brand", CONFIG.branding.primaryColor);
-    document.documentElement.style.setProperty("--bg", CONFIG.branding.backgroundColor);
-    document.documentElement.style.setProperty("--text", CONFIG.branding.textColor);
-  </script>
+<main>
 
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-content: center;
-      text-align: center;
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Online Booking System</span>
+    <h1 id="heroTitle">Professional clinic booking, deposits and client management.</h1>
+    <p id="heroIntro">
+      A clean booking experience for clinics and beauty professionals. Clients can pay a deposit, choose an appointment, reschedule, cancel and receive confirmation emails.
+    </p>
 
-    h1 {
-      color: var(--brand);
-    }
-  </style>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="deposit.html">Book Appointment</a>
+      <a class="btn btn-secondary" href="admin.html">Admin Dashboard</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap grid">
+    <div class="card">
+      <h3>Deposit-first booking</h3>
+      <p>Clients pay before choosing their appointment time, helping reduce no-shows and protect availability.</p>
+    </div>
+
+    <div class="card">
+      <h3>Client self-service</h3>
+      <p>Clients can manage their booking using secure reschedule and cancellation links.</p>
+    </div>
+
+    <div class="card">
+      <h3>Private dashboard</h3>
+      <p>View bookings, payment status, client details, reminders, package sessions and aftercare status.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="booking-panel">
+      <span class="kicker">Start here</span>
+      <h2>Ready to take bookings?</h2>
+      <p>
+        Your client journey starts with deposit payment, then appointment selection.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="deposit.html">Pay Deposit & Book</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap" id="footerText">© Your Clinic Name</div>
+</footer>
+
+<script>
+const CONFIG = window.CONFIG || {};
+const business = CONFIG.business || {};
+const branding = CONFIG.branding || {};
+
+const businessName = business.name || "Your Clinic Name";
+const tagline = business.tagline || "Aesthetic & Beauty Specialist";
+const logo = branding.logo || "";
+
+document.title = `${businessName} | Online Booking`;
+
+document.documentElement.style.setProperty("--brand", branding.primaryColor || "#1e3a5f");
+document.documentElement.style.setProperty("--brand-dark", branding.primaryDark || "#162c47");
+document.documentElement.style.setProperty("--bg", branding.backgroundColor || "#f4f7fb");
+document.documentElement.style.setProperty("--text", branding.textColor || "#1a1a1a");
+document.documentElement.style.setProperty("--soft", branding.softBackground || "#e6f0ff");
+document.documentElement.style.setProperty("--muted", branding.mutedColor || "#6b7a90");
+
+document.getElementById("businessName").textContent = businessName;
+document.getElementById("businessTagline").textContent = tagline;
+document.getElementById("footerText").textContent = `© ${businessName}`;
+
+const logoEl = document.getElementById("businessLogo");
+if (logo) {
+  logoEl.src = logo;
+  logoEl.style.display = "block";
+}
+</script>
+
 </body>
 </html>
