@@ -299,12 +299,12 @@ document.getElementById("openingHours").textContent = openingHoursText;
   const sessionId = urlParams.get("session_id");
 
   if (sessionId) {
-    localStorage.setItem("templateDepositGate", "allowed");
-    localStorage.setItem("templateDepositGateTs", String(Date.now()));
+    localStorage.setItem("clinicDepositGate", "allowed");
+    localStorage.setItem("clinicDepositGateTs", String(Date.now()));
   }
 
-  const allowed = localStorage.getItem("templateDepositGate");
-  const ts = Number(localStorage.getItem("templateDepositGateTs") || "0");
+  const allowed = localStorage.getItem("clinicDepositGate");
+  const ts = Number(localStorage.getItem("clinicDepositGateTs") || "0");
   const twelveHours = 12 * 60 * 60 * 1000;
 
   if (allowed !== "allowed" || !ts || (Date.now() - ts) > twelveHours) {
