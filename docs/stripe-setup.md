@@ -1,32 +1,21 @@
-# Stripe Payment Link Setup
+# Stripe Setup (5 minutes)
 
-## 1. Create your Stripe Payment Link
+1. Create a free Stripe account
 
-Create a payment link for your consultation deposit.
+2. Go to “Payment Links”
 
-Example:
-- Product: Consultation Deposit
-- Price: £30
+3. Create product:
+   Consultation Deposit
 
-## 2. Set the success redirect URL
+4. Set price:
+   £30
 
-Use this format:
+5. After payment redirect:
+   https://YOURDOMAIN.com/booking.html?session_id=success
 
-```text
-https://yourdomain.com/booking.html?session_id={CHECKOUT_SESSION_ID}
+6. Copy your payment link
 
-For testing on Cloudflare Pages:
+7. Paste into:
+   config/config.js
 
-https://your-project.pages.dev/booking.html?session_id={CHECKOUT_SESSION_ID}
-
-In Stripe, make sure you set:
-
-After payment → Redirect URL
-
-To:
-
-https://yourdomain.com/booking.html?session_id={CHECKOUT_SESSION_ID}
-
-Or for your test site:
-
-https://master-aji.pages.dev/booking.html?session_id={CHECKOUT_SESSION_ID}
+depositPaymentLink: "YOUR LINK HERE"
