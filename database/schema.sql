@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS appointments (
   appointment_time TEXT NOT NULL,
   status TEXT NOT NULL DEFAULT 'confirmed',
 
-  reschedule_token TEXT NOT NULL,
+  reschedule_token TEXT NOT NULL UNIQUE,
 
   booking_type TEXT NOT NULL DEFAULT 'consultation',
 
