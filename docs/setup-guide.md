@@ -327,6 +327,31 @@ Your system is now fully live.
 
 ---
 
+# Website
+
+Customising Your Website
+
+Most branding changes are made in:
+
+site/config/config.js
+
+Update:
+- Business name
+- Tagline
+- Email
+- Domain
+- Brand colours
+- Logo path
+- Stripe payment link
+
+To change the main website wording, open:
+
+site/index.html
+
+You can edit the visible text between the HTML tags, for example headings, service descriptions, FAQ text and button text.
+
+Do not change script tags, IDs, or JavaScript unless you are comfortable editing code.
+
 # Support
 
 If you have any issues, refer back to this guide and double-check each step carefully.
