@@ -504,18 +504,18 @@ const nameInput = document.getElementById("customerName");
 const emailInput = document.getElementById("customerEmail");
 const phoneInput = document.getElementById("customerPhone");
 
-nameInput.value = localStorage.getItem("template_customer_name") || "";
-emailInput.value = localStorage.getItem("template_customer_email") || "";
-phoneInput.value = localStorage.getItem("template_customer_phone") || "";
+nameInput.value = localStorage.getItem("clinic_customer_name") || "";
+emailInput.value = localStorage.getItem("clinic_customer_email") || "";
+phoneInput.value = localStorage.getItem("clinic_customer_phone") || "";
 
 function saveCustomerDetails() {
   const name = nameInput.value.trim();
   const email = emailInput.value.trim();
   const phone = phoneInput.value.trim();
 
-  localStorage.setItem("template_customer_name", name);
-  localStorage.setItem("template_customer_email", email);
-  localStorage.setItem("template_customer_phone", phone);
+  localStorage.setItem("clinic_customer_name", name);
+  localStorage.setItem("clinic_customer_email", email);
+  localStorage.setItem("clinic_customer_phone", phone);
 }
 
 function isPlaceholderPaymentLink(link) {
@@ -547,8 +547,8 @@ payBtn.addEventListener("click", function(e) {
 const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.get("paid") === "true" || urlParams.get("session_id")) {
   saveCustomerDetails();
-  localStorage.setItem("templateDepositGate", "allowed");
-  localStorage.setItem("templateDepositGateTs", String(Date.now()));
+  localStorage.setItem("clinicDepositGate", "allowed");
+  localStorage.setItem("clinicDepositGateTs", String(Date.now()));
   window.location.href = bookingPage.includes("?") ? bookingPage : `${bookingPage}?session_id=paid`;
 }
 </script>
