@@ -1,3 +1,33 @@
+How This System Works
+
+ClinicFlow™ is a standalone booking system.
+
+You can use it in two ways:
+
+Option 1 — Use as your full website
+
+Upload the system and use it as your main website.
+
+Includes:
+
+Homepage
+Booking system
+Admin dashboard
+
+
+Option 2 — Use with your existing website (recommended)
+
+If you already have a website:
+
+Set up this system on a subdomain
+Example: book.yourdomain.com
+Add a “Book Now” button on your website
+Link it to:
+/deposit.html
+Important
+
+You do NOT need to replace your website to use this system.
+
 # ClinicFlow™ – Full Setup Guide
 
 This guide will walk you through setting up your booking system step-by-step.
@@ -327,30 +357,90 @@ Your system is now fully live.
 
 ---
 
-# Website
+# Customising Your Website Content
 
-Customising Your Website
-
-Most branding changes are made in:
-
-site/config/config.js
-
-Update:
-- Business name
-- Tagline
-- Email
-- Domain
-- Brand colours
-- Logo path
-- Stripe payment link
-
-To change the main website wording, open:
+Your website content is controlled in:
 
 site/index.html
 
-You can edit the visible text between the HTML tags, for example headings, service descriptions, FAQ text and button text.
+---
 
-Do not change script tags, IDs, or JavaScript unless you are comfortable editing code.
+## 1. Quick Branding (no coding)
+
+Most changes are done in:
+
+site/config/config.js
+
+This includes:
+
+* Business name
+* Logo
+* Colours
+* Contact details
+
+---
+
+## 2. Editing Your Website Content
+
+To change text on your website:
+
+1. Open:
+   site/index.html
+
+2. Edit the text between the tags
+
+Example:
+
+<h1>Professional clinic booking</h1>
+
+You can change this to:
+
+<h1>Laser Tattoo Removal in Oxfordshire</h1>
+
+---
+
+## 3. Sections You Can Edit
+
+You can customise:
+
+* Main heading (hero section)
+* Description text
+* Service cards
+* Booking section text
+* Footer
+
+---
+
+## 4. Important
+
+Do NOT change:
+
+* script tags
+* element IDs (id="...")
+* JavaScript code
+
+These are required for the system to work.
+
+---
+
+## 5. Optional Improvements
+
+You can also:
+
+* Add your own images
+* Add pricing sections
+* Add testimonials
+
+---
+
+## Summary
+
+✔ Easy text editing
+✔ No coding required for basic setup
+✔ Fully customisable website
+
+Your booking system will continue working automatically.
+
 
 # Support
 
