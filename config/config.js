@@ -9,7 +9,7 @@ window.CONFIG = {
   },
 
   branding: {
-    logo: "logo.png",
+    logo: "/assets/logo.png"
     primaryColor: "#1e3a5f",
     backgroundColor: "#eaf2fb",
     textColor: "#1a1a1a"
