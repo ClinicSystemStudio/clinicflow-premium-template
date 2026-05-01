@@ -1,20 +1,56 @@
-Required environment variables:
+# Step 4 — Connect Your System (Environment Setup)
 
-BUSINESS_NAME=Your Business Name
-BUSINESS_DOMAIN=https://yourdomain.com
+This step connects your booking system to your database and email notifications.
 
-ADMIN_EMAIL=owner@yourdomain.com
-FROM_EMAIL=Your Business <forms@send.yourdomain.com>
-REPLY_TO_EMAIL=owner@yourdomain.com
+---
 
-RESEND_API_KEY=your_resend_api_key
+## 1. Add Environment Variables
 
-CONSULTATION_PRICE=30
-CURRENCY_SYMBOL=£
+Go to:
 
-BRAND_COLOR=#1e3a5f
-BRAND_DARK=#162c47
-EMAIL_BG=#f4f7fb
-EMAIL_SOFT=#e6f0ff
-TEXT_COLOR=#1a1a1a
-MUTED_COLOR=#6b7a90
+Cloudflare Dashboard → Pages → Your Project → Settings → Environment Variables
+
+Add the following:
+
+BUSINESS_NAME = Your Clinic Name
+BUSINESS_DOMAIN = https://yourdomain.com
+ADMIN_EMAIL = [your@email.com](mailto:your@email.com)
+FROM_EMAIL = [your@email.com](mailto:your@email.com)
+REPLY_TO_EMAIL = [your@email.com](mailto:your@email.com)
+
+---
+
+## 2. Email Setup (Resend)
+
+Create a free account at:
+https://resend.com
+
+Generate an API key and add:
+
+RESEND_API_KEY = your_api_key_here
+
+---
+
+## 3. Booking Settings
+
+CONSULTATION_PRICE = 30
+CURRENCY_SYMBOL = £
+
+---
+
+## 4. Connect Database (D1)
+
+Go to:
+
+Pages → Settings → Functions → D1 Bindings
+
+Add:
+
+Binding Name: DB
+Database: Select your database
+
+---
+
+## That’s it
+
+Your system is now fully connected and ready to receive bookings.
